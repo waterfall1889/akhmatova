@@ -1,0 +1,53 @@
+# --- IDE & editors ---
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+*.swo
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Frontend (Vite + React) ---
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+frontend/.eslintcache
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/*.local
+
+# --- Backend (Spring Boot / Maven) ---
+backend/target/
+backend/.apt_generated/
+backend/.classpath
+backend/.factorypath
+backend/.project
+backend/.settings/
+backend/.springBeans
+backend/.sts4-cache/
+backend/nbproject/private/
+backend/build/
+backend/*.log
+
+# --- Local secrets & env (never commit) ---
+.env
+!.env.example
+database_config/.env
+database_config/database.properties
+
+# --- Misc ---
+*.log
+tmp/
+temp/
+.cache/
+
+develop.md

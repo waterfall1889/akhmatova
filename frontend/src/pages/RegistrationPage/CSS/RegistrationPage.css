@@ -1,0 +1,30 @@
+/* Centered register page (no left brand); slightly wider card */
+.login-page.login-page--register-solo {
+  justify-content: center;
+  padding: 2rem clamp(1rem, 3vw, 2rem);
+}
+
+@media (max-width: 768px) {
+  .login-page.login-page--register-solo {
+    padding: 1.25rem 1rem;
+  }
+}
+
+.login-page.login-page--register-solo .login-page__panel {
+  margin-left: 0;
+}
+
+.login-page__panel--register {
+  max-width: 440px;
+}
+
+@media (max-width: 768px) {
+  .login-page__panel--register {
+    max-width: 100%;
+  }
+}
+
+.login-page .ant-input-show-count-suffix,
+.login-page .ant-input-data-count {
+  color: rgba(255, 255, 255, 0.55) !important;
+}

@@ -1,0 +1,219 @@
+/* Full viewport width inside constrained #root so the background can span edge to edge */
+.login-page {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 100svh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rem clamp(1rem, 4vw, 4rem) 2rem clamp(1rem, 5vw, 5rem);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  text-align: left;
+}
+
+.login-page__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    125deg,
+    rgba(25, 15, 55, 0.58) 0%,
+    rgba(90, 40, 130, 0.22) 42%,
+    rgba(255, 130, 70, 0.18) 100%
+  );
+}
+
+.login-page__layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.25rem, 4vw, 3.25rem);
+  width: 100%;
+  max-width: min(1000px, 100%);
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.login-page__panel {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.login-page__card.ant-card {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 18px;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.login-page__card .ant-card-body {
+  padding: 1.75rem 1.85rem;
+}
+
+.login-page__title.ant-typography {
+  margin-bottom: 1.25rem !important;
+  color: rgba(255, 255, 255, 0.96) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+}
+
+.login-page .ant-form-item-label > label {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.login-page .ant-input,
+.login-page .ant-input-password,
+.login-page .ant-input-number {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* showCount / suffix wrap defaults to white — match glass fields */
+.login-page .ant-input-affix-wrapper,
+.login-page .ant-input-outlined.ant-input-affix-wrapper {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.login-page .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+  background: rgba(255, 255, 255, 0.26) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.login-page .ant-input-affix-wrapper-focused,
+.login-page .ant-input-affix-wrapper:focus-within {
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 220, 255, 0.5) !important;
+}
+
+.login-page .ant-input-affix-wrapper .ant-input,
+.login-page .ant-input-affix-wrapper input.ant-input {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.login-page .ant-input-affix-wrapper .ant-input::placeholder,
+.login-page .ant-input-affix-wrapper input.ant-input::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.login-page .ant-input::placeholder,
+.login-page .ant-input-password input::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.login-page .ant-input-number .ant-input-number-input {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.login-page .login-form__mode-tabs {
+  display: flex !important;
+  width: 100%;
+}
+
+.login-page .login-form__mode-tabs .ant-radio-button-wrapper {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  justify-content: center;
+  display: inline-flex !important;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.login-page .login-form__mode-tabs .ant-radio-button-wrapper:first-child {
+  border-radius: 10px 0 0 10px !important;
+}
+
+.login-page .login-form__mode-tabs .ant-radio-button-wrapper:last-child {
+  border-radius: 0 10px 10px 0 !important;
+}
+
+.login-page .login-form__mode-tabs .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  background: rgba(255, 255, 255, 0.32) !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
+  color: #fff !important;
+}
+
+.login-page .login-form__mode-tabs .ant-radio-button-wrapper:hover {
+  color: #fff !important;
+}
+
+.login-page .ant-btn-primary {
+  height: 42px;
+  font-weight: 600;
+  border: none !important;
+  background: linear-gradient(135deg, #5b21b6 0%, #ea580c 100%) !important;
+  box-shadow: 0 6px 20px rgba(91, 33, 182, 0.45);
+}
+
+.login-page .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #f97316 100%) !important;
+  box-shadow: 0 8px 24px rgba(91, 33, 182, 0.5);
+}
+
+.login-page .ant-checkbox-wrapper {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.login-page .ant-input-suffix .anticon,
+.login-page .ant-input-password-icon.anticon {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.login-page__footer {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.login-page__footer a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.login-page__footer a:hover {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    justify-content: center;
+    padding: 1.25rem 1rem;
+  }
+
+  .login-page__layout {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .login-page__panel {
+    max-width: 100%;
+  }
+}

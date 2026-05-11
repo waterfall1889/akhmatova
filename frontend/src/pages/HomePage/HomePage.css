@@ -1,0 +1,102 @@
+.home-account-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5rem 0 1rem;
+  box-sizing: border-box;
+}
+
+.home-account-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 100%;
+}
+
+.home-account-card {
+  width: 100%;
+  max-width: 480px;
+  flex: 0 1 auto;
+  text-align: left;
+}
+
+.home-account-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.home-account-avatar.ant-avatar {
+  width: 120px !important;
+  height: 120px !important;
+  line-height: 120px !important;
+  font-size: 2.5rem !important;
+  font-weight: 600;
+}
+
+.home-account-upload-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.home-account-upload-hint {
+  font-size: 12px;
+  text-align: center;
+}
+
+.home-account-readonly-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.75rem 1rem;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.home-account-view-block {
+  margin-bottom: 1.25rem;
+}
+
+.home-account-actions-view {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.home-account-form {
+  margin-top: 0.25rem;
+}
+
+.home-account-label {
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: 500;
+}
+
+.home-account-value {
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-word;
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-account-label {
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .home-account-value {
+    color: rgba(255, 255, 255, 0.88);
+  }
+}
+
+.home-account-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border, #e5e4e7);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}

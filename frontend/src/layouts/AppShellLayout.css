@@ -1,0 +1,78 @@
+/*
+ * 全宽应用壳：顶栏 + 侧栏菜单 + 主内容（Outlet）。
+ * 突破 #root 的 max-width，与登录页一致横向铺满视口。
+ */
+.app-shell.ant-layout {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.app-shell__header {
+  display: flex;
+  align-items: center;
+  padding: 0 48px;
+  flex-shrink: 0;
+  background: linear-gradient(120deg, #4c1d95 0%, #6d28d9 45%, #7c3aed 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.app-shell__logo {
+  color: rgba(255, 255, 255, 0.96);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+}
+
+.app-shell__menu.ant-menu .ant-menu-item-selected {
+  background-color: #dbeafe !important;
+  color: #1d4ed8 !important;
+}
+
+.app-shell__menu.ant-menu .ant-menu-item-selected .ant-menu-item-icon {
+  color: #2563eb !important;
+}
+
+.app-shell__wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-shell__main.ant-layout {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.app-shell__sider .ant-layout-sider-children {
+  height: 100%;
+}
+
+.app-shell__content {
+  margin: 0 !important;
+  min-height: 0 !important;
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 0 24px !important;
+}
+
+.app-shell__placeholder {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 24px 0;
+}

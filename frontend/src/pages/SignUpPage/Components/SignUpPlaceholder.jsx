@@ -14,7 +14,7 @@ export function SignUpPlaceholder() {
         <Link to="/login">
           <Button type="link">Log in</Button>
         </Link>
-        <Link to="/">
+        <Link to="/auth">
           <Button type="default">Home</Button>
         </Link>
       </Space>

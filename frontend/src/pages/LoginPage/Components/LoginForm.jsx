@@ -54,7 +54,7 @@ export function LoginForm() {
           clearRememberedLogin()
         }
         form.resetFields()
-        navigate('/', { replace: true })
+        navigate('/auth', { replace: true })
       } else {
         message.error(result.message)
       }

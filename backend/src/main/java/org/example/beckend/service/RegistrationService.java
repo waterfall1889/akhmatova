@@ -11,6 +11,7 @@ import org.example.beckend.repository.LoginAccountRepository;
 import org.example.beckend.repository.UserInformationRepository;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.example.beckend.dto.LoginResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -89,6 +90,38 @@ public class RegistrationService {
             }
         }
         return RegisterResponse.fail("暂时无法分配唯一账号，请稍后重试");
+    }
+
+    /**
+     * 修改当前登录用户的基本资料（用户名、邮箱）；邮箱全局唯一（排除本人）。
+     */
+    @Transactional
+    public LoginResponse updateProfile(long userId, String rawUserName, String rawEmail) {
+        String userNameError = validateUserName(rawUserName);
+        if (userNameError != null) {
+            return new LoginResponse(false, userNameError);
+        }
+        String emailError = validateEmail(rawEmail);
+        if (emailError != null) {
+            return new LoginResponse(false, emailError);
+        }
+        String userName = rawUserName.trim();
+        String email = rawEmail.trim().toLowerCase(Locale.ROOT);
+
+        UserInformation existing = userInformationRepository.findById(userId).orElse(null);
+        if (existing == null) {
+            return new LoginResponse(false, "用户不存在");
+        }
+        if (!existing.getUserEmail().equalsIgnoreCase(email)) {
+            var other = userInformationRepository.findByUserEmailIgnoreCase(email);
+            if (other.isPresent() && !other.get().getId().equals(userId)) {
+                return new LoginResponse(false, "该邮箱已被其他账号使用");
+            }
+        }
+        existing.setUserName(userName);
+        existing.setUserEmail(email);
+        userInformationRepository.save(existing);
+        return new LoginResponse(true, "资料已更新");
     }
 
     private static String validateUserName(String raw) {
